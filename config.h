@@ -7,7 +7,7 @@ static unsigned int snap      = 32;       /* snap pixel */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char font[]            = "FiraCode Nerd Font:style=Regular:size=14";
-static char dmenufont[]       = "FiraCode Nerd Font:style=Regular:size=14";
+static char dmenufont[]       = "FiraCode Nerd Font:style=Bold:size=14";
 static char *fonts[]          = { font };
 static char normbgcolor[]     = "#222222";
 static char normbordercolor[] = "#444444";
@@ -22,17 +22,21 @@ static char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tagsalt[] = { "a", "b", "c", "d", "e", "f", "g", "h", "i" };
+static const char *tags[] = { "", "爵", "", "", "", ""};
+static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6"};
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class            instance                  title       tags mask     isfloating   monitor */
+	{ "Brave-browser",  "brave-browser",          NULL,       1 << 1,       0,                 -1 },
+	{ "Zathura",        "org.pwmt.zathura",       NULL,       1 << 2,       0,                 -1 },
+	{ "mpv",            "gl",                     NULL,       1 << 3,       0,                 -1 },
+	{ "Inkscape",       "org.inkscape.Inkscape",  NULL,       1 << 4,       0,                 -1 },
+	{ "Gimp",           "gimp",                   NULL,       1 << 4,       0,                 -1 },
+	{ "Slack",          "slack",                  NULL,       1 << 5,       0,                 -1 },
 };
 
 /* layout(s) */
